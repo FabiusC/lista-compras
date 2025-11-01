@@ -1,4 +1,4 @@
-import { ItemCompra, LugaresData, CompraData } from '../types';
+import type { ItemCompra, LugaresData, CompraData } from '../types';
 import { PRODUCTOS_INICIALES } from '../data/productosIniciales';
 
 // Lugares predefinidos
