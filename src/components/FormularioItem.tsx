@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { ItemCompra, CategoriaId, LugarId } from '../types';
 import { categoriaService } from '../services/categoriaService';
 import { lugarService } from '../services/lugarService';
+import { formatearInputPrecio, parsearPrecio, formatearPrecio } from '../utils/formatoPrecio';
 
 interface FormularioItemProps {
   item?: ItemCompra;
@@ -16,9 +17,16 @@ export function FormularioItem({
 }: FormularioItemProps) {
   const [nombre, setNombre] = useState(item?.nombre || '');
   const [lugar, setLugar] = useState<LugarId | ''>(item?.lugar || '');
-  const [precio, setPrecio] = useState(item?.precio?.toString() || '0');
+  const [precio, setPrecio] = useState(
+    item?.precio ? formatearPrecio(item.precio) : ''
+  );
   const [categoria, setCategoria] = useState<CategoriaId>(item?.categoria || 'otros');
   const [falta, setFalta] = useState(item?.falta ?? true);
+
+  const handlePrecioChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const valorFormateado = formatearInputPrecio(e.target.value);
+    setPrecio(valorFormateado);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -31,7 +39,7 @@ export function FormularioItem({
       ...(item ? { id: item.id } : {}),
       nombre: nombre.trim(),
       lugar: lugar || ('' as const),
-      precio: parseFloat(precio) || 0,
+      precio: parsearPrecio(precio),
       categoria,
       falta
     };
@@ -73,11 +81,11 @@ export function FormularioItem({
           <div className="form-group">
             <label>Precio</label>
             <input
-              type="number"
-              step="0.01"
-              min="0"
+              type="text"
+              inputMode="numeric"
               value={precio}
-              onChange={(e) => setPrecio(e.target.value)}
+              onChange={handlePrecioChange}
+              placeholder="0"
             />
           </div>
 

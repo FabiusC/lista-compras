@@ -1,6 +1,7 @@
 import type { ItemCompra } from '../types';
 import { categoriaService } from '../services/categoriaService';
 import { lugarService } from '../services/lugarService';
+import { formatearPrecio } from '../utils/formatoPrecio';
 
 interface ItemCardProps {
   item: ItemCompra;
@@ -12,6 +13,7 @@ interface ItemCardProps {
 export function ItemCard({ item, onEdit, onDelete, onToggleFalta }: ItemCardProps) {
   const nombreCategoria = categoriaService.getNombreById(item.categoria);
   const nombreLugar = item.lugar ? lugarService.getNombreById(item.lugar) : '';
+  const precioFormateado = formatearPrecio(item.precio);
   
   return (
     <div className={`item-card ${item.falta ? '' : 'comprado'}`}>
@@ -45,7 +47,7 @@ export function ItemCard({ item, onEdit, onDelete, onToggleFalta }: ItemCardProp
       <div className="item-detalles">
         {nombreLugar && <span className="item-lugar">📍 {nombreLugar}</span>}
         <span className="item-categoria">🏷️ {nombreCategoria}</span>
-        <span className="item-precio">💰 ${item.precio.toFixed(2)}</span>
+        <span className="item-precio">💰 ${precioFormateado}</span>
       </div>
     </div>
   );
