@@ -17,9 +17,23 @@ function App() {
   const [faltaFiltro, setFaltaFiltro] = useState<'todos' | 'falta' | 'no-falta'>('todos');
   const [busqueda, setBusqueda] = useState<string>('');
 
-  // Cargar datos iniciales
+  // Cargar datos iniciales y suscribirse a cambios
   useEffect(() => {
-    setItems(compraService.getItems());
+    const loadInitialData = async () => {
+      const loadedItems = await compraService.getItems();
+      setItems(loadedItems);
+    };
+
+    loadInitialData();
+
+    // Suscribirse a cambios en tiempo real
+    const unsubscribe = compraService.subscribeToChanges((newItems) => {
+      setItems(newItems);
+    });
+
+    return () => {
+      unsubscribe();
+    };
   }, []);
 
   // Filtrar items
@@ -67,27 +81,27 @@ function App() {
     setMostrarFormulario(true);
   };
 
-  const handleEliminar = (id: string) => {
+  const handleEliminar = async (id: string) => {
     if (confirm('¿Estás seguro de eliminar este item?')) {
-      compraService.eliminarItem(id);
-      setItems(compraService.getItems());
+      await compraService.eliminarItem(id);
+      // La actualización vendrá a través de la suscripción
     }
   };
 
-  const handleGuardar = (itemData: Omit<ItemCompra, 'id'> | ItemCompra) => {
+  const handleGuardar = async (itemData: Omit<ItemCompra, 'id'> | ItemCompra) => {
     if ('id' in itemData) {
-      compraService.actualizarItem(itemData.id, itemData);
+      await compraService.actualizarItem(itemData.id, itemData);
     } else {
-      compraService.agregarItem(itemData);
+      await compraService.agregarItem(itemData);
     }
-    setItems(compraService.getItems());
+    // La actualización vendrá a través de la suscripción
     setMostrarFormulario(false);
     setItemEditando(undefined);
   };
 
-  const handleToggleFalta = (id: string) => {
-    compraService.toggleFalta(id);
-    setItems(compraService.getItems());
+  const handleToggleFalta = async (id: string) => {
+    await compraService.toggleFalta(id);
+    // La actualización vendrá a través de la suscripción
   };
 
   return (

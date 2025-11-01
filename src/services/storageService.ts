@@ -1,5 +1,6 @@
 import type { ItemCompra, LugaresData, CompraData } from '../types';
 import { PRODUCTOS_INICIALES } from '../data/productosIniciales';
+import { syncService } from './syncService';
 
 // Lugares predefinidos
 const LUGARES_INICIALES = [
@@ -33,6 +34,15 @@ function saveDataToStorage<T>(key: string, data: T): void {
   }
 }
 
+// Función para sincronizar items
+async function syncItems(items: ItemCompra[]): Promise<void> {
+  try {
+    await syncService.saveData(items);
+  } catch (error) {
+    console.error('Error sincronizando datos:', error);
+  }
+}
+
 // Servicio para manejar lugares
 export const lugaresService = {
   getLugares: (): string[] => {
@@ -56,48 +66,79 @@ export const lugaresService = {
 
 // Servicio para manejar items de compra
 export const compraService = {
-  getItems: (): ItemCompra[] => {
+  getItems: async (): Promise<ItemCompra[]> => {
+    // Intentar cargar de sync primero
+    const syncedItems = await syncService.loadData();
+    if (syncedItems && syncedItems.length > 0) {
+      saveDataToStorage<CompraData>('compras', { items: syncedItems });
+      return syncedItems;
+    }
+
+    // Fallback a localStorage
     const data = getDataFromStorage<CompraData>('compras', { items: [] });
+    
     // Si no hay items, inicializar con los productos predefinidos
     if (data.items.length === 0) {
       saveDataToStorage<CompraData>('compras', { items: PRODUCTOS_INICIALES });
+      await syncItems(PRODUCTOS_INICIALES);
+      return PRODUCTOS_INICIALES;
+    }
+
+    // Sincronizar los items locales
+    await syncItems(data.items);
+    return data.items;
+  },
+
+  getItemsSync: (): ItemCompra[] => {
+    // Versión síncrona para compatibilidad
+    const data = getDataFromStorage<CompraData>('compras', { items: [] });
+    if (data.items.length === 0) {
       return PRODUCTOS_INICIALES;
     }
     return data.items;
   },
 
-  agregarItem: (item: Omit<ItemCompra, 'id'>): ItemCompra => {
-    const items = compraService.getItems();
+  agregarItem: async (item: Omit<ItemCompra, 'id'>): Promise<ItemCompra> => {
+    const items = compraService.getItemsSync();
     const nuevoItem: ItemCompra = {
       ...item,
       id: Date.now().toString() + Math.random().toString(36).substr(2, 9)
     };
     items.push(nuevoItem);
     saveDataToStorage<CompraData>('compras', { items });
+    await syncItems(items);
     return nuevoItem;
   },
 
-  actualizarItem: (id: string, itemActualizado: Partial<ItemCompra>): void => {
-    const items = compraService.getItems();
+  actualizarItem: async (id: string, itemActualizado: Partial<ItemCompra>): Promise<void> => {
+    const items = compraService.getItemsSync();
     const index = items.findIndex(item => item.id === id);
     if (index !== -1) {
       items[index] = { ...items[index], ...itemActualizado };
       saveDataToStorage<CompraData>('compras', { items });
+      await syncItems(items);
     }
   },
 
-  eliminarItem: (id: string): void => {
-    const items = compraService.getItems().filter(item => item.id !== id);
+  eliminarItem: async (id: string): Promise<void> => {
+    const items = compraService.getItemsSync().filter(item => item.id !== id);
     saveDataToStorage<CompraData>('compras', { items });
+    await syncItems(items);
   },
 
-  toggleFalta: (id: string): void => {
-    const items = compraService.getItems();
+  toggleFalta: async (id: string): Promise<void> => {
+    const items = compraService.getItemsSync();
     const index = items.findIndex(item => item.id === id);
     if (index !== -1) {
       items[index].falta = !items[index].falta;
       saveDataToStorage<CompraData>('compras', { items });
+      await syncItems(items);
     }
+  },
+
+  // Suscribirse a cambios en tiempo real
+  subscribeToChanges: (callback: (items: ItemCompra[]) => void): (() => void) => {
+    return syncService.subscribeToChanges(callback);
   }
 };
 
