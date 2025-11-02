@@ -3,9 +3,4 @@ export interface LugarInfo {
   nombre: string;
 }
 
-export type LugarId = 
-  | 'd1'
-  | 'exito'
-  | 'jumbo'
-  | 'fruver';
-
+export type LugarId = "d1" | "exito" | "jumbo" | "fruver" | "otros";
