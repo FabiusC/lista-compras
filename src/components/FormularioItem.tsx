@@ -16,7 +16,7 @@ export function FormularioItem({
   onCancel
 }: FormularioItemProps) {
   const [nombre, setNombre] = useState(item?.nombre || '');
-  const [lugar, setLugar] = useState<LugarId | ''>(item?.lugar || '');
+  const [lugares, setLugares] = useState<LugarId[]>(item?.lugares || []);
   const [precio, setPrecio] = useState(
     item?.precio ? formatearPrecio(item.precio) : ''
   );
@@ -26,6 +26,14 @@ export function FormularioItem({
   const handlePrecioChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const valorFormateado = formatearInputPrecio(e.target.value);
     setPrecio(valorFormateado);
+  };
+
+  const handleLugarChange = (lugarId: LugarId, checked: boolean) => {
+    if (checked) {
+      setLugares([...lugares, lugarId]);
+    } else {
+      setLugares(lugares.filter(id => id !== lugarId));
+    }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -38,7 +46,7 @@ export function FormularioItem({
     const itemData = {
       ...(item ? { id: item.id } : {}),
       nombre: nombre.trim(),
-      lugar: lugar || ('' as const),
+      lugares,
       precio: parsearPrecio(precio),
       categoria,
       falta
@@ -64,18 +72,19 @@ export function FormularioItem({
           </div>
 
           <div className="form-group">
-            <label>Lugar</label>
-            <select
-              value={lugar}
-              onChange={(e) => setLugar(e.target.value as LugarId | '')}
-            >
-              <option value="">-- Seleccionar lugar --</option>
-              {lugarService.getAll().map((l) => (
-                <option key={l.id} value={l.id}>
-                  {l.nombre}
-                </option>
+            <label>Lugares (puede seleccionar múltiples)</label>
+            <div className="checkbox-list">
+              {lugarService.getAll().map((lugar) => (
+                <label key={lugar.id} className="checkbox-item">
+                  <input
+                    type="checkbox"
+                    checked={lugares.includes(lugar.id as LugarId)}
+                    onChange={(e) => handleLugarChange(lugar.id as LugarId, e.target.checked)}
+                  />
+                  <span>{lugar.nombre}</span>
+                </label>
               ))}
-            </select>
+            </div>
           </div>
 
           <div className="form-group">

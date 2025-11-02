@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import type { ItemCompra, CategoriaId } from './types';
+import type { ItemCompra, CategoriaId, LugarId } from './types';
 import { compraService } from './services/storageService';
 import { FiltrosBar } from './components/FiltrosBar';
 import { ItemCard } from './components/ItemCard';
@@ -41,10 +41,10 @@ function App() {
     return items.filter((item) => {
       // Filtro por lugar
       if (lugarFiltro !== 'todos') {
-        if (lugarFiltro === 'sin-lugar' && item.lugar !== '') {
+        if (lugarFiltro === 'sin-lugar' && item.lugares.length > 0) {
           return false;
         }
-        if (lugarFiltro !== 'sin-lugar' && item.lugar !== lugarFiltro) {
+        if (lugarFiltro !== 'sin-lugar' && !item.lugares.includes(lugarFiltro as LugarId)) {
           return false;
         }
       }

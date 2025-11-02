@@ -1,4 +1,9 @@
-import type { ItemCompra, LugaresData, CompraData } from "../types";
+import type {
+  ItemCompra,
+  LugaresData,
+  CompraData,
+  CategoriaId,
+} from "../types";
 import { PRODUCTOS_INICIALES } from "../data/productosIniciales";
 import { syncService } from "./syncService";
 
@@ -41,6 +46,44 @@ async function syncItems(items: ItemCompra[]): Promise<void> {
   } catch (error) {
     console.error("Error sincronizando datos:", error);
   }
+}
+
+// Tipo para items con formato anterior
+interface ItemCompraAntiguo {
+  id: string;
+  nombre: string;
+  lugar: string;
+  precio: number;
+  categoria: string;
+  falta: boolean;
+}
+
+// Función para migrar datos del formato antiguo al nuevo
+function migrateItemsFromOldFormat(
+  items: (ItemCompra | ItemCompraAntiguo)[]
+): ItemCompra[] {
+  return items.map((item) => {
+    // Si ya tiene el nuevo formato, devolver tal como está
+    if ("lugares" in item && Array.isArray(item.lugares)) {
+      return item as ItemCompra;
+    }
+
+    // Migrar del formato antiguo (lugar: string) al nuevo (lugares: string[])
+    const itemAntiguo = item as ItemCompraAntiguo;
+    const lugares: string[] = [];
+    if (itemAntiguo.lugar && itemAntiguo.lugar !== "") {
+      lugares.push(itemAntiguo.lugar);
+    }
+
+    return {
+      id: itemAntiguo.id,
+      nombre: itemAntiguo.nombre,
+      lugares,
+      precio: itemAntiguo.precio,
+      categoria: itemAntiguo.categoria as CategoriaId,
+      falta: itemAntiguo.falta,
+    } as ItemCompra;
+  });
 }
 
 // Servicio para manejar lugares
@@ -86,8 +129,9 @@ export const compraService = {
     // Intentar cargar de sync primero
     const syncedItems = await syncService.loadData();
     if (syncedItems && syncedItems.length > 0) {
-      saveDataToStorage<CompraData>("compras", { items: syncedItems });
-      return syncedItems;
+      const itemsMigrados = migrateItemsFromOldFormat(syncedItems);
+      saveDataToStorage<CompraData>("compras", { items: itemsMigrados });
+      return itemsMigrados;
     }
 
     // Fallback a localStorage
@@ -100,9 +144,17 @@ export const compraService = {
       return PRODUCTOS_INICIALES;
     }
 
+    // Migrar datos si es necesario
+    const itemsMigrados = migrateItemsFromOldFormat(data.items);
+
+    // Guardar los datos migrados si hubo cambios
+    if (JSON.stringify(itemsMigrados) !== JSON.stringify(data.items)) {
+      saveDataToStorage<CompraData>("compras", { items: itemsMigrados });
+    }
+
     // Sincronizar los items locales
-    await syncItems(data.items);
-    return data.items;
+    await syncItems(itemsMigrados);
+    return itemsMigrados;
   },
 
   getItemsSync: (): ItemCompra[] => {
@@ -111,7 +163,16 @@ export const compraService = {
     if (data.items.length === 0) {
       return PRODUCTOS_INICIALES;
     }
-    return data.items;
+
+    // Migrar datos si es necesario
+    const itemsMigrados = migrateItemsFromOldFormat(data.items);
+
+    // Guardar los datos migrados si hubo cambios
+    if (JSON.stringify(itemsMigrados) !== JSON.stringify(data.items)) {
+      saveDataToStorage<CompraData>("compras", { items: itemsMigrados });
+    }
+
+    return itemsMigrados;
   },
 
   agregarItem: async (item: Omit<ItemCompra, "id">): Promise<ItemCompra> => {

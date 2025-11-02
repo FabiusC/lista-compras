@@ -12,7 +12,7 @@ interface ItemCardProps {
 
 export function ItemCard({ item, onEdit, onDelete, onToggleFalta }: ItemCardProps) {
   const nombreCategoria = categoriaService.getNombreById(item.categoria);
-  const nombreLugar = item.lugar ? lugarService.getNombreById(item.lugar) : '';
+  const nombresLugares = item.lugares.map(lugarId => lugarService.getNombreById(lugarId)).filter(Boolean);
   const precioFormateado = formatearPrecio(item.precio);
   
   return (
@@ -45,7 +45,9 @@ export function ItemCard({ item, onEdit, onDelete, onToggleFalta }: ItemCardProp
       </div>
       
       <div className="item-detalles">
-        {nombreLugar && <span className="item-lugar">📍 {nombreLugar}</span>}
+        {nombresLugares.length > 0 && (
+          <span className="item-lugar">📍 {nombresLugares.join(', ')}</span>
+        )}
         <span className="item-categoria">🏷️ {nombreCategoria}</span>
         <span className="item-precio">💰 ${precioFormateado}</span>
       </div>

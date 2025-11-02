@@ -10,7 +10,7 @@ function crearItem(nombre: string, categoria: CategoriaId): ItemCompra {
   return {
     id: generarId(),
     nombre,
-    lugar: "",
+    lugares: [],
     precio: 0,
     categoria,
     falta: true,
