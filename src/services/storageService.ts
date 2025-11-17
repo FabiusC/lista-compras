@@ -3,19 +3,19 @@ import type {
   LugaresData,
   CompraData,
   CategoriaId,
+  LugarId,
 } from "../types";
-import { PRODUCTOS_INICIALES } from "../data/productosIniciales";
-import { syncService } from "./syncService";
+import itemsInicialesData from "../data/itemsIniciales.json";
+
+// Obtener los items iniciales desde el JSON con conversión de tipos
+const ITEMS_INICIALES: ItemCompra[] = itemsInicialesData.items.map((item) => ({
+  ...item,
+  lugares: item.lugares as LugarId[],
+  categoria: item.categoria as CategoriaId,
+}));
 
 // Lugares predefinidos
-const LUGARES_INICIALES = [
-  "Supermercado",
-  "Farmacia",
-  "Mercado Local",
-  "Tienda de Verduras",
-  "Carnicería",
-  "Panadería",
-];
+const LUGARES_INICIALES = ["exito", "d1", "jumbo", "fruver", "otros"];
 
 // Función para obtener datos del localStorage o inicializar
 function getDataFromStorage<T>(key: string, defaultValue: T): T {
@@ -36,15 +36,6 @@ function saveDataToStorage<T>(key: string, data: T): void {
     localStorage.setItem(key, JSON.stringify(data));
   } catch (error) {
     console.error(`Error al guardar ${key} en localStorage:`, error);
-  }
-}
-
-// Función para sincronizar items
-async function syncItems(items: ItemCompra[]): Promise<void> {
-  try {
-    await syncService.saveData(items);
-  } catch (error) {
-    console.error("Error sincronizando datos:", error);
   }
 }
 
@@ -126,22 +117,13 @@ function notifySubscribers(items: ItemCompra[]): void {
 // Servicio para manejar items de compra
 export const compraService = {
   getItems: async (): Promise<ItemCompra[]> => {
-    // Intentar cargar de sync primero
-    const syncedItems = await syncService.loadData();
-    if (syncedItems && syncedItems.length > 0) {
-      const itemsMigrados = migrateItemsFromOldFormat(syncedItems);
-      saveDataToStorage<CompraData>("compras", { items: itemsMigrados });
-      return itemsMigrados;
-    }
-
-    // Fallback a localStorage
+    // Cargar desde localStorage
     const data = getDataFromStorage<CompraData>("compras", { items: [] });
 
-    // Si no hay items, inicializar con los productos predefinidos
+    // Si no hay items, inicializar con los productos predefinidos desde el JSON
     if (data.items.length === 0) {
-      saveDataToStorage<CompraData>("compras", { items: PRODUCTOS_INICIALES });
-      await syncItems(PRODUCTOS_INICIALES);
-      return PRODUCTOS_INICIALES;
+      saveDataToStorage<CompraData>("compras", { items: ITEMS_INICIALES });
+      return ITEMS_INICIALES;
     }
 
     // Migrar datos si es necesario
@@ -152,8 +134,6 @@ export const compraService = {
       saveDataToStorage<CompraData>("compras", { items: itemsMigrados });
     }
 
-    // Sincronizar los items locales
-    await syncItems(itemsMigrados);
     return itemsMigrados;
   },
 
@@ -161,7 +141,7 @@ export const compraService = {
     // Versión síncrona para compatibilidad
     const data = getDataFromStorage<CompraData>("compras", { items: [] });
     if (data.items.length === 0) {
-      return PRODUCTOS_INICIALES;
+      return ITEMS_INICIALES;
     }
 
     // Migrar datos si es necesario
@@ -187,8 +167,6 @@ export const compraService = {
     // Notificar inmediatamente a los suscriptores
     notifySubscribers(items);
 
-    // Sincronizar en segundo plano
-    await syncItems(items);
     return nuevoItem;
   },
 
@@ -204,9 +182,6 @@ export const compraService = {
 
       // Notificar inmediatamente a los suscriptores
       notifySubscribers(items);
-
-      // Sincronizar en segundo plano
-      await syncItems(items);
     }
   },
 
@@ -216,9 +191,6 @@ export const compraService = {
 
     // Notificar inmediatamente a los suscriptores
     notifySubscribers(items);
-
-    // Sincronizar en segundo plano
-    await syncItems(items);
   },
 
   toggleFalta: async (id: string): Promise<void> => {
@@ -230,9 +202,6 @@ export const compraService = {
 
       // Notificar inmediatamente a los suscriptores
       notifySubscribers(items);
-
-      // Sincronizar en segundo plano
-      await syncItems(items);
     }
   },
 
@@ -243,15 +212,10 @@ export const compraService = {
     // Agregar callback local
     changeSubscribers.push(callback);
 
-    // También suscribirse al servicio de sync para cambios externos
-    const syncUnsubscribe = syncService.subscribeToChanges(callback);
-
-    // Retornar función para desuscribirse de ambos
+    // Retornar función para desuscribirse
     return () => {
       // Remover del array local
       changeSubscribers = changeSubscribers.filter((cb) => cb !== callback);
-      // Desuscribirse del sync service
-      syncUnsubscribe();
     };
   },
 };

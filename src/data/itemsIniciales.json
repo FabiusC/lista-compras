@@ -1,0 +1,1176 @@
+{
+    "items": [
+        {
+            "id": "1762030460199vndtnelus",
+            "nombre": "Leche",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 20000,
+            "categoria": "lacteos",
+            "falta": true
+        },
+        {
+            "id": "1762030460199uubctd90k",
+            "nombre": "Yogurt griego",
+            "lugares": [
+                "exito",
+                "d1"
+            ],
+            "precio": 0,
+            "categoria": "lacteos",
+            "falta": true
+        },
+        {
+            "id": "1762030460199wg2zsjp8k",
+            "nombre": "Mantequilla",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "lacteos",
+            "falta": true
+        },
+        {
+            "id": "1762030460199uk0wbdx64",
+            "nombre": "Mantequilla para untar",
+            "lugares": [
+                "d1"
+            ],
+            "precio": 0,
+            "categoria": "lacteos",
+            "falta": true
+        },
+        {
+            "id": "1762030460199s9r8h5ns8",
+            "nombre": "Margarina",
+            "lugares": [
+                "exito",
+                "d1"
+            ],
+            "precio": 0,
+            "categoria": "lacteos",
+            "falta": true
+        },
+        {
+            "id": "1762030460199fzb9fe52k",
+            "nombre": "Chocolate",
+            "lugares": [
+                "d1"
+            ],
+            "precio": 9000,
+            "categoria": "lacteos",
+            "falta": true
+        },
+        {
+            "id": "17620304601990hbvh7rda",
+            "nombre": "Chips de chicolate",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "panaderia",
+            "falta": true
+        },
+        {
+            "id": "17620304601996qmzy0jht",
+            "nombre": "Huevos",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "proteinas",
+            "falta": true
+        },
+        {
+            "id": "1762030460199r5xkno5wf",
+            "nombre": "Salchichas",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "proteinas",
+            "falta": true
+        },
+        {
+            "id": "1762030460199cdmu50drq",
+            "nombre": "Pechugas de pollo",
+            "lugares": [
+                "exito",
+                "jumbo"
+            ],
+            "precio": 0,
+            "categoria": "proteinas",
+            "falta": true
+        },
+        {
+            "id": "1762030460199gzy22pm54",
+            "nombre": "Carne Hamburguesa",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "proteinas",
+            "falta": true
+        },
+        {
+            "id": "1762030460199ark2dzb99",
+            "nombre": "Atún",
+            "lugares": [
+                "exito",
+                "jumbo"
+            ],
+            "precio": 0,
+            "categoria": "proteinas",
+            "falta": true
+        },
+        {
+            "id": "1762030460199xosiqt5tf",
+            "nombre": "Pan tajado",
+            "lugares": [
+                "exito",
+                "d1",
+                "jumbo"
+            ],
+            "precio": 4000,
+            "categoria": "panaderia",
+            "falta": true
+        },
+        {
+            "id": "1762030460199habu1nfbn",
+            "nombre": "Pan hamburguesa",
+            "lugares": [
+                "d1",
+                "exito",
+                "jumbo"
+            ],
+            "precio": 0,
+            "categoria": "panaderia",
+            "falta": true
+        },
+        {
+            "id": "17620304601990nbf73zfw",
+            "nombre": "Queso tajado",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "panaderia",
+            "falta": true
+        },
+        {
+            "id": "17620304601994lt1mzjb2",
+            "nombre": "Jamon",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "panaderia",
+            "falta": true
+        },
+        {
+            "id": "1762030460199tdbzbofr5",
+            "nombre": "Tocineta",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "panaderia",
+            "falta": true
+        },
+        {
+            "id": "1762030460199t6qmy23mm",
+            "nombre": "Arepas",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "panaderia",
+            "falta": true
+        },
+        {
+            "id": "17620304601991qm5cadao",
+            "nombre": "Harina de Pancake",
+            "lugares": [
+                "exito",
+                "jumbo"
+            ],
+            "precio": 0,
+            "categoria": "panaderia",
+            "falta": true
+        },
+        {
+            "id": "1762030460199uet6jcbb6",
+            "nombre": "Cachapa",
+            "lugares": [
+                "exito",
+                "jumbo"
+            ],
+            "precio": 0,
+            "categoria": "panaderia",
+            "falta": true
+        },
+        {
+            "id": "1762030460199c5v8jmzsv",
+            "nombre": "Rice Cake",
+            "lugares": [
+                "d1"
+            ],
+            "precio": 0,
+            "categoria": "panaderia",
+            "falta": true
+        },
+        {
+            "id": "17620304601993j2jnsmbt",
+            "nombre": "Arroz",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "cereales",
+            "falta": true
+        },
+        {
+            "id": "1762030460199b5j2izqgc",
+            "nombre": "Lentejas",
+            "lugares": [
+                "d1"
+            ],
+            "precio": 0,
+            "categoria": "cereales",
+            "falta": true
+        },
+        {
+            "id": "1762030460199fzl2zbi6t",
+            "nombre": "Frijoles",
+            "lugares": [
+                "d1",
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "cereales",
+            "falta": true
+        },
+        {
+            "id": "1762030460199lo09orkfx",
+            "nombre": "Garbanzos",
+            "lugares": [
+                "d1"
+            ],
+            "precio": 0,
+            "categoria": "cereales",
+            "falta": true
+        },
+        {
+            "id": "1762030460199zcewc4coz",
+            "nombre": "Arvejas",
+            "lugares": [
+                "d1"
+            ],
+            "precio": 0,
+            "categoria": "cereales",
+            "falta": true
+        },
+        {
+            "id": "1762030460199m5ktn255t",
+            "nombre": "Avena Hojuelas",
+            "lugares": [
+                "exito",
+                "d1"
+            ],
+            "precio": 0,
+            "categoria": "cereales",
+            "falta": true
+        },
+        {
+            "id": "1762030460199pttci1750",
+            "nombre": "Banano",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "frutas-y-verduras",
+            "falta": true
+        },
+        {
+            "id": "17620304601994dgilq8v1",
+            "nombre": "Manzana verde",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "frutas-y-verduras",
+            "falta": true
+        },
+        {
+            "id": "1762030460199d69dty02d",
+            "nombre": "Fresas",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "frutas-y-verduras",
+            "falta": true
+        },
+        {
+            "id": "1762030460199w3c1prd83",
+            "nombre": "Arandanos",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "frutas-y-verduras",
+            "falta": true
+        },
+        {
+            "id": "1762030460199p09uyn9cu",
+            "nombre": "Limon",
+            "lugares": [
+                "exito",
+                "fruver"
+            ],
+            "precio": 0,
+            "categoria": "frutas-y-verduras",
+            "falta": true
+        },
+        {
+            "id": "176203046019917ycpztfg",
+            "nombre": "Lulo",
+            "lugares": [
+                "fruver",
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "frutas-y-verduras",
+            "falta": true
+        },
+        {
+            "id": "1762030460199dnx9mmfhi",
+            "nombre": "Tomate de árbol",
+            "lugares": [
+                "exito",
+                "fruver"
+            ],
+            "precio": 0,
+            "categoria": "frutas-y-verduras",
+            "falta": true
+        },
+        {
+            "id": "1762030460199smdj20s3m",
+            "nombre": "Papa Grande",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "frutas-y-verduras",
+            "falta": true
+        },
+        {
+            "id": "1762030460199wb5jh6elx",
+            "nombre": "Papa pequeña",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "frutas-y-verduras",
+            "falta": true
+        },
+        {
+            "id": "1762030460199n9j1cjjjx",
+            "nombre": "Zanahorias",
+            "lugares": [
+                "exito",
+                "fruver"
+            ],
+            "precio": 0,
+            "categoria": "frutas-y-verduras",
+            "falta": true
+        },
+        {
+            "id": "1762030460199zbufu7p5h",
+            "nombre": "Tomate",
+            "lugares": [
+                "exito",
+                "fruver"
+            ],
+            "precio": 0,
+            "categoria": "frutas-y-verduras",
+            "falta": true
+        },
+        {
+            "id": "1762030460199waa0a4ur6",
+            "nombre": "Cebolla larga",
+            "lugares": [
+                "fruver"
+            ],
+            "precio": 0,
+            "categoria": "frutas-y-verduras",
+            "falta": true
+        },
+        {
+            "id": "1762030460199fzlz9txaw",
+            "nombre": "Edamame",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "frutas-y-verduras",
+            "falta": true
+        },
+        {
+            "id": "1762030460199w2vg76708",
+            "nombre": "Pepino",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "frutas-y-verduras",
+            "falta": true
+        },
+        {
+            "id": "176203046019963i0ss4cc",
+            "nombre": "Lechuga",
+            "lugares": [
+                "exito",
+                "fruver"
+            ],
+            "precio": 0,
+            "categoria": "frutas-y-verduras",
+            "falta": true
+        },
+        {
+            "id": "1762030460199z7mus22r5",
+            "nombre": "Pimenton",
+            "lugares": [
+                "exito",
+                "fruver"
+            ],
+            "precio": 0,
+            "categoria": "frutas-y-verduras",
+            "falta": true
+        },
+        {
+            "id": "176203046019931z0wjony",
+            "nombre": "Miel",
+            "lugares": [
+                "exito",
+                "d1"
+            ],
+            "precio": 0,
+            "categoria": "salsas-y-condimentos",
+            "falta": true
+        },
+        {
+            "id": "1762030460199anu7soys7",
+            "nombre": "Azucar",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "salsas-y-condimentos",
+            "falta": true
+        },
+        {
+            "id": "1762030460199u77yxg6oy",
+            "nombre": "Sal",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "salsas-y-condimentos",
+            "falta": true
+        },
+        {
+            "id": "1762030460199jefibyvwt",
+            "nombre": "Panela",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "salsas-y-condimentos",
+            "falta": true
+        },
+        {
+            "id": "1762030460199yemvokyws",
+            "nombre": "Sirope",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "salsas-y-condimentos",
+            "falta": true
+        },
+        {
+            "id": "1762030460199ls0ge75tq",
+            "nombre": "Mermelada",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "salsas-y-condimentos",
+            "falta": true
+        },
+        {
+            "id": "176203046019933uszvsf2",
+            "nombre": "Salsa de piña",
+            "lugares": [
+                "exito",
+                "d1"
+            ],
+            "precio": 0,
+            "categoria": "salsas-y-condimentos",
+            "falta": true
+        },
+        {
+            "id": "1762030460199g191l09hu",
+            "nombre": "Salsa de Tomate",
+            "lugares": [
+                "exito",
+                "d1"
+            ],
+            "precio": 0,
+            "categoria": "salsas-y-condimentos",
+            "falta": true
+        },
+        {
+            "id": "1762030460199ruejd9z01",
+            "nombre": "Mayonesa",
+            "lugares": [
+                "d1",
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "salsas-y-condimentos",
+            "falta": true
+        },
+        {
+            "id": "1762030460199nv2oyglzj",
+            "nombre": "Salsa de Soya",
+            "lugares": [
+                "d1",
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "salsas-y-condimentos",
+            "falta": true
+        },
+        {
+            "id": "17620304601997jnj5jxhb",
+            "nombre": "Teriyaki",
+            "lugares": [
+                "d1",
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "salsas-y-condimentos",
+            "falta": true
+        },
+        {
+            "id": "176203046019901lenibqr",
+            "nombre": "Salsa negra",
+            "lugares": [
+                "d1",
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "salsas-y-condimentos",
+            "falta": true
+        },
+        {
+            "id": "1762030460199f52ymw6gt",
+            "nombre": "Ajo en polvo",
+            "lugares": [
+                "d1",
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "salsas-y-condimentos",
+            "falta": true
+        },
+        {
+            "id": "1762030460199n559e8g5g",
+            "nombre": "Vinagre de Arroz",
+            "lugares": [
+                "d1",
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "salsas-y-condimentos",
+            "falta": true
+        },
+        {
+            "id": "1762030460199btlg85vub",
+            "nombre": "Vinagre Balsámico",
+            "lugares": [
+                "d1"
+            ],
+            "precio": 0,
+            "categoria": "salsas-y-condimentos",
+            "falta": true
+        },
+        {
+            "id": "1762030460199yd0tzud00",
+            "nombre": "Salsa Ranch",
+            "lugares": [
+                "exito",
+                "d1"
+            ],
+            "precio": 0,
+            "categoria": "salsas-y-condimentos",
+            "falta": true
+        },
+        {
+            "id": "1762030460199xoyf2osuk",
+            "nombre": "Vinagreta",
+            "lugares": [
+                "d1",
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "salsas-y-condimentos",
+            "falta": true
+        },
+        {
+            "id": "1762030460199ziaahjp3v",
+            "nombre": "Chili Powder",
+            "lugares": [
+                "otros"
+            ],
+            "precio": 0,
+            "categoria": "salsas-y-condimentos",
+            "falta": true
+        },
+        {
+            "id": "17620304601991hfjx8cx4",
+            "nombre": "Chili Flakes",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "salsas-y-condimentos",
+            "falta": true
+        },
+        {
+            "id": "1762030460199mqy15ojoq",
+            "nombre": "Aceite de Ajonjolí",
+            "lugares": [
+                "otros"
+            ],
+            "precio": 0,
+            "categoria": "salsas-y-condimentos",
+            "falta": true
+        },
+        {
+            "id": "1762030460199l1bh635n3",
+            "nombre": "Aceite de oliva",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "salsas-y-condimentos",
+            "falta": true
+        },
+        {
+            "id": "1762030460199xb84wu0ce",
+            "nombre": "Aceite vegetal",
+            "lugares": [
+                "exito",
+                "d1"
+            ],
+            "precio": 0,
+            "categoria": "salsas-y-condimentos",
+            "falta": true
+        },
+        {
+            "id": "17620304601996rvuy8dwb",
+            "nombre": "Ajonjoli",
+            "lugares": [
+                "otros"
+            ],
+            "precio": 0,
+            "categoria": "salsas-y-condimentos",
+            "falta": true
+        },
+        {
+            "id": "17620304601990isw2459n",
+            "nombre": "Milo",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "snacks",
+            "falta": true
+        },
+        {
+            "id": "1762030460199ulz0d8970",
+            "nombre": "Cereal",
+            "lugares": [
+                "exito",
+                "d1"
+            ],
+            "precio": 0,
+            "categoria": "snacks",
+            "falta": true
+        },
+        {
+            "id": "1762030460199czd9o5eai",
+            "nombre": "Nuzart",
+            "lugares": [
+                "d1"
+            ],
+            "precio": 0,
+            "categoria": "snacks",
+            "falta": true
+        },
+        {
+            "id": "1762030460199ltymab99c",
+            "nombre": "Peanut butter",
+            "lugares": [
+                "d1",
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "snacks",
+            "falta": true
+        },
+        {
+            "id": "1762030460199q2shctyaw",
+            "nombre": "Chips de chocolate",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "snacks",
+            "falta": true
+        },
+        {
+            "id": "176203046019970lpgacou",
+            "nombre": "Almendra fileteada",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "snacks",
+            "falta": true
+        },
+        {
+            "id": "17620304601991b1o2jar7",
+            "nombre": "Té negro",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "bebidas",
+            "falta": true
+        },
+        {
+            "id": "17620304601993am27ta16",
+            "nombre": "Té de matcha",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "bebidas",
+            "falta": true
+        },
+        {
+            "id": "17620304601991hf8b0sh5",
+            "nombre": "Té Negro",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "bebidas",
+            "falta": true
+        },
+        {
+            "id": "1762030460199mv3o3my74",
+            "nombre": "Aromática",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "bebidas",
+            "falta": true
+        },
+        {
+            "id": "17620304601992t63tur6w",
+            "nombre": "Jugo Naranja",
+            "lugares": [
+                "d1",
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "bebidas",
+            "falta": true
+        },
+        {
+            "id": "1762030460199jyrnhohjp",
+            "nombre": "Zumo Mandarina",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "bebidas",
+            "falta": true
+        },
+        {
+            "id": "1762030460199su2cu1p4f",
+            "nombre": "Pasta",
+            "lugares": [
+                "exito",
+                "d1"
+            ],
+            "precio": 0,
+            "categoria": "pasta-y-comidas-rapidas",
+            "falta": true
+        },
+        {
+            "id": "1762030460199f8e5u4uie",
+            "nombre": "Mac & Cheese",
+            "lugares": [
+                "exito",
+                "d1"
+            ],
+            "precio": 0,
+            "categoria": "pasta-y-comidas-rapidas",
+            "falta": true
+        },
+        {
+            "id": "1762030460199g7cc94072",
+            "nombre": "Cup noodles",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "pasta-y-comidas-rapidas",
+            "falta": true
+        },
+        {
+            "id": "1762030460199mp8uc84nd",
+            "nombre": "Nuggets de pollo",
+            "lugares": [
+                "d1"
+            ],
+            "precio": 0,
+            "categoria": "productos-congelados",
+            "falta": true
+        },
+        {
+            "id": "1762030460199d8oghh9vh",
+            "nombre": "Milanesas",
+            "lugares": [
+                "d1"
+            ],
+            "precio": 0,
+            "categoria": "productos-congelados",
+            "falta": true
+        },
+        {
+            "id": "17620304601997uarsuouf",
+            "nombre": "Pescado apanado",
+            "lugares": [
+                "d1"
+            ],
+            "precio": 0,
+            "categoria": "productos-congelados",
+            "falta": true
+        },
+        {
+            "id": "1762030460199btb04o49b",
+            "nombre": "Crema dental",
+            "lugares": [
+                "exito",
+                "d1"
+            ],
+            "precio": 0,
+            "categoria": "aseo-personal",
+            "falta": true
+        },
+        {
+            "id": "1762030460199on1t6q0un",
+            "nombre": "Enjuague bucal",
+            "lugares": [
+                "d1",
+                "exito",
+                "otros"
+            ],
+            "precio": 0,
+            "categoria": "aseo-personal",
+            "falta": true
+        },
+        {
+            "id": "1762030460199v7p5rtols",
+            "nombre": "Jabon corporal",
+            "lugares": [
+                "d1",
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "aseo-personal",
+            "falta": true
+        },
+        {
+            "id": "1762030460199xnh2khta1",
+            "nombre": "Jabon de manos",
+            "lugares": [
+                "d1",
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "aseo-personal",
+            "falta": true
+        },
+        {
+            "id": "1762030460199pz2lxh2wf",
+            "nombre": "Desodorantes",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "aseo-personal",
+            "falta": true
+        },
+        {
+            "id": "17620304601996uirmlroy",
+            "nombre": "Depilacion",
+            "lugares": [
+                "exito",
+                "otros"
+            ],
+            "precio": 0,
+            "categoria": "aseo-personal",
+            "falta": true
+        },
+        {
+            "id": "1762030460199t1ackxl96",
+            "nombre": "Esponja Corporal",
+            "lugares": [
+                "d1",
+                "otros"
+            ],
+            "precio": 0,
+            "categoria": "aseo-personal",
+            "falta": true
+        },
+        {
+            "id": "17620304601996kqd78iak",
+            "nombre": "Seda dental",
+            "lugares": [
+                "exito",
+                "d1",
+                "otros"
+            ],
+            "precio": 0,
+            "categoria": "aseo-personal",
+            "falta": true
+        },
+        {
+            "id": "17620304601992nekufsq0",
+            "nombre": "Jabón para ropa",
+            "lugares": [
+                "exito",
+                "d1"
+            ],
+            "precio": 0,
+            "categoria": "aseo",
+            "falta": true
+        },
+        {
+            "id": "1762030460199eydq8g6gp",
+            "nombre": "Aromatizante del piso",
+            "lugares": [
+                "d1",
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "aseo",
+            "falta": true
+        },
+        {
+            "id": "1762030460199l4r8t110f",
+            "nombre": "Bolsas blancas",
+            "lugares": [
+                "d1"
+            ],
+            "precio": 0,
+            "categoria": "aseo",
+            "falta": true
+        },
+        {
+            "id": "1762030460199zx7e48gzb",
+            "nombre": "Bolsas negras",
+            "lugares": [
+                "d1"
+            ],
+            "precio": 0,
+            "categoria": "aseo",
+            "falta": true
+        },
+        {
+            "id": "17620304601993picn84s4",
+            "nombre": "Papel higiénico",
+            "lugares": [
+                "exito",
+                "otros"
+            ],
+            "precio": 0,
+            "categoria": "aseo",
+            "falta": true
+        },
+        {
+            "id": "1762030460199cwhkwkulm",
+            "nombre": "Papel parafinado",
+            "lugares": [
+                "exito",
+                "otros"
+            ],
+            "precio": 0,
+            "categoria": "aseo",
+            "falta": true
+        },
+        {
+            "id": "1762030460199ud6cfzufo",
+            "nombre": "Toallas de cocina",
+            "lugares": [
+                "d1",
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "aseo",
+            "falta": true
+        },
+        {
+            "id": "1762030460199g8u8oder3",
+            "nombre": "Gel Azul",
+            "lugares": [
+                "d1",
+                "otros"
+            ],
+            "precio": 0,
+            "categoria": "aseo",
+            "falta": true
+        },
+        {
+            "id": "176203046019992fnqjr7s",
+            "nombre": "Jabon Rey",
+            "lugares": [
+                "d1",
+                "exito",
+                "otros"
+            ],
+            "precio": 0,
+            "categoria": "aseo",
+            "falta": true
+        },
+        {
+            "id": "1762030460199mmz2zi7fj",
+            "nombre": "Palo de escoba",
+            "lugares": [
+                "d1",
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "aseo",
+            "falta": true
+        },
+        {
+            "id": "1762030460199ci58qg75w",
+            "nombre": "Vinagre blanco",
+            "lugares": [
+                "d1",
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "aseo",
+            "falta": true
+        },
+        {
+            "id": "1762030460199vtrdt7kx7",
+            "nombre": "Jabón en polvo de bicarbonato con limon",
+            "lugares": [
+                "d1",
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "aseo",
+            "falta": true
+        },
+        {
+            "id": "17620304601992uiksccad",
+            "nombre": "Bio Varsol en Crema",
+            "lugares": [
+                "d1"
+            ],
+            "precio": 0,
+            "categoria": "aseo",
+            "falta": true
+        },
+        {
+            "id": "1762030460199p05y94ceh",
+            "nombre": "Guantes baño",
+            "lugares": [
+                "exito",
+                "d1"
+            ],
+            "precio": 0,
+            "categoria": "aseo",
+            "falta": true
+        },
+        {
+            "id": "1762030460199k94fv6xzj",
+            "nombre": "Jabon de loza",
+            "lugares": [
+                "exito",
+                "d1"
+            ],
+            "precio": 0,
+            "categoria": "aseo",
+            "falta": true
+        },
+        {
+            "id": "1762030460199mra8vbvyz",
+            "nombre": "Briket",
+            "lugares": [
+                "exito",
+                "d1"
+            ],
+            "precio": 0,
+            "categoria": "aseo",
+            "falta": true
+        },
+        {
+            "id": "176203046019969yvj092c",
+            "nombre": "Trapitos",
+            "lugares": [
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "aseo",
+            "falta": true
+        },
+        {
+            "id": "1762030460199aoyvgy9dp",
+            "nombre": "Cetiricina",
+            "lugares": [
+                "otros",
+                "exito"
+            ],
+            "precio": 0,
+            "categoria": "farmacia",
+            "falta": true
+        },
+        {
+            "id": "17620304601991r74go9e2",
+            "nombre": "Isomeprasol",
+            "lugares": [
+                "exito",
+                "otros"
+            ],
+            "precio": 0,
+            "categoria": "farmacia",
+            "falta": true
+        }
+    ],
+    "lastModified": 1762192365310
+}
